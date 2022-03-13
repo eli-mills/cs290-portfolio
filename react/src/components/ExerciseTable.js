@@ -1,7 +1,9 @@
 import React from 'react';
 import ExerciseRow from './ExerciseRow';
+import CreateExerciseRow from './CreateExerciseRow';
+import ExerciseTableHead from './ExerciseTableHead';
 
-function ExerciseTable () {
+function ExerciseTable ({setEntry}) {
     const entries = [
         {
             _id: "id01",
@@ -15,17 +17,10 @@ function ExerciseTable () {
 
     return (
         <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Reps</th>
-                    <th>Weight</th>
-                    <th>Unit</th>
-                    <th>Date</th>
-                </tr>
-            </thead>
+            <ExerciseTableHead />
             <tbody>
-                {entries.map( (entry, index) => <ExerciseRow entry={entry} key = {index} /> ) }
+                {entries.map( (entry, index) => <ExerciseRow entry={entry} key = {index} setEntry={setEntry}/> ) }
+                <CreateExerciseRow />
             </tbody>
         </table>
     );

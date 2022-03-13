@@ -1,7 +1,10 @@
+// STYLES
 import './App.css';
 
+// UTILITIES
 import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+import { useState } from 'react';
 
 // PAGES
 import HomePage from './pages/HomePage';
@@ -12,6 +15,9 @@ import CreateExercisePage from './pages/CreateExercisePage';
 import Navigation from './components/Navigation';
 
 function App() {
+
+  let [entryToEdit, setEntryToEdit] = useState();
+
   return (
     <div className="App">
       <Router>
@@ -22,9 +28,9 @@ function App() {
         <Navigation />
 
         <main>
-          <Route path="/" exact> <HomePage /> </Route>
+          <Route path="/" exact> <HomePage setEntry={setEntryToEdit}/> </Route>
+          <Route path="/edit-exercise"> <EditExercisePage entry={entryToEdit}/> </Route>
           <Route path="/create-exercise"> <CreateExercisePage /> </Route>
-          <Route path="/edit-exercise"> <EditExercisePage /> </Route>
         </main>
 
         <footer>

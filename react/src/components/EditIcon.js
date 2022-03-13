@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { BiEdit } from 'react-icons/bi';
 
-function EditIcon ({id}) {
-    const whenClicked = () => {console.log(`Editing ${id}`)}
+function EditIcon ({entry, setEntry}) {
+    const editItem = () => { setEntry(entry) }
     return (
-        <BiEdit onClick={whenClicked} />
+        <Link to="/edit-exercise">
+            <BiEdit onClick={editItem} />
+        </Link>
     );
 }
 

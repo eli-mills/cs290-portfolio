@@ -2,11 +2,11 @@ import React from 'react';
 
 import ExerciseTable from '../components/ExerciseTable';
 
-function HomePage () {
+function HomePage ({setEntry}) {
     return (
         <>
             <h2>Home Page</h2>
-            <ExerciseTable />
+            <ExerciseTable setEntry={setEntry}/>
         </>
     );
 }

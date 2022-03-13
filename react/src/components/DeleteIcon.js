@@ -3,10 +3,10 @@ import { TiDeleteOutline } from 'react-icons/ti';
 
 
 function DeleteIcon ({id}) {
-    const whenClicked = () => {console.log(`Deleting ${id}`)};
+    const deleteRow = () => {console.log(`Deleting ${id}`)};
 
     return (
-        <TiDeleteOutline onClick={whenClicked} />
+        <TiDeleteOutline onClick={deleteRow} />
     );
 }
 
