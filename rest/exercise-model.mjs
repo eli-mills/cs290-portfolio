@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
-
+import { user, password } from './user-password.mjs';
 
 // INITIALIZE DATABASE CONNECTION
 mongoose.connect(
-    "mongodb://localhost:27017/exercise_db",
+    `mongodb+srv://${user}:${password}@cs290-portfolio.4a7yq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
     { useNewUrlParser: true }
 );
 
@@ -50,3 +50,6 @@ const updateEntry = async (entryId, updates) => {
 const deleteEntry = async (entryId) => {
      return User.deleteOne( {_id: entryId} );
 }
+
+// EXPORTS
+export { createEntry, retrieveAllEntries, updateEntry, deleteEntry }
