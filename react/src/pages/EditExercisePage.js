@@ -1,13 +1,16 @@
 import React from 'react';
 import ExerciseTableHead from '../components/ExerciseTableHead';
-import { useState } from 'react'
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function EditExercisePage ({entry}) {
     const [name, setName] = useState(entry.name);
     const [reps, setReps] = useState(entry.reps);
     const [weight, setWeight] = useState(entry.weight);
-    const [units, setUnits] = useState(entry.units);
+    const [unit, setUnit] = useState(entry.unit);
     const [date, setDate] = useState(entry.date);
+
+    const history = useHistory();
     
     return (
         <>
@@ -41,9 +44,9 @@ function EditExercisePage ({entry}) {
                                 />
                             </td>
                             <td>
-                                <select onChange={e=>{setUnits(e.target.value)}}>
-                                    <option value="lbs" selected={units==="lbs"}>lbs</option>
-                                    <option value="kgs" selected={units==="kgs"}>kgs</option>
+                                <select onChange={e=>{setUnit(e.target.value)}}>
+                                    <option value="lbs" selected={unit==="lbs"}>lbs</option>
+                                    <option value="kgs" selected={unit==="kgs"}>kgs</option>
                                 </select>
                             </td>
                             <td>
@@ -59,7 +62,8 @@ function EditExercisePage ({entry}) {
                 <button 
                     onClick={ e => {
                         e.preventDefault();
-                        alert(`Success! The following was updated: ${name}, ${reps}, ${weight}, ${units}, ${date}`);
+                        alert(`Success! The following was updated: ${name}, ${reps}, ${weight}, ${unit}, ${date}`);
+                        history.push('/');
                     }}
                 >
                     Submit
