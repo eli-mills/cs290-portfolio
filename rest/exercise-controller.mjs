@@ -35,6 +35,7 @@ app.get('/exercises', (req, res)=>{
 
 // UPDATE
 app.put('/exercises/:_id', (req, res)=>{
+    console.log("Update request received.")
     const updates = req.body;
     console.log(updates);
     updateEntry(req.params._id, updates)

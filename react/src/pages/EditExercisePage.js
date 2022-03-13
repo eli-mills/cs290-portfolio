@@ -11,10 +11,27 @@ function EditExercisePage ({entry}) {
     const [date, setDate] = useState(entry.date);
 
     const history = useHistory();
+
+    const editEntry = async e => {
+        e.preventDefault();
+        const response = await fetch(`/exercises/${entry._id}`, {
+            method: 'PUT',
+            body: JSON.stringify({name, reps, weight, unit, date}),
+            headers: {'Content-Type': 'application/json'}
+        });
+
+        if (response.status === 200) {
+            alert("Successfully edited the entry.");
+        } else {
+            alert(`Failed to edit the entry, status code: ${response.status}`);
+        }
+
+        history.push('/');
+    };
     
     return (
         <>
-            <h1>Edit Exercise: {entry._id}</h1>
+            <h1>Edit Exercise:</h1>
             <form>
                 <table>
                     <ExerciseTableHead />
@@ -59,13 +76,7 @@ function EditExercisePage ({entry}) {
                         </tr>
                     </tbody>
                 </table>
-                <button 
-                    onClick={ e => {
-                        e.preventDefault();
-                        alert(`Success! The following was updated: ${name}, ${reps}, ${weight}, ${unit}, ${date}`);
-                        history.push('/');
-                    }}
-                >
+                <button onClick={ editEntry }>
                     Submit
                 </button>
             </form>
