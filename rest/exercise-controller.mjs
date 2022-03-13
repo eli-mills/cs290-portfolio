@@ -13,6 +13,7 @@ app.use(express.json());
 // CREATE
 app.post('/exercises', ( req, res ) => {
     const { name, reps, weight, unit, date } = req.body;
+    console.log("Create request received.");
     createEntry( name, reps, weight, unit, date )
     .then( newEntry => { res.status(201).json(newEntry); } )
     .catch( error => { 
@@ -23,6 +24,7 @@ app.post('/exercises', ( req, res ) => {
 
 // RETRIEVE
 app.get('/exercises', (req, res)=>{
+    console.log("Retrieve request received.");
     retrieveAllEntries()
     .then( entryArray => { res.status(200).json(entryArray) } )
     .catch( error => { 
@@ -45,6 +47,7 @@ app.put('/exercises/:_id', (req, res)=>{
 
 // DELETE
 app.delete('/exercises/:_id', (req, res)=>{
+    console.log("Delete request received.");
     deleteEntry(req.params._id)
     .then(()=>{res.status(204).end()})
     .catch(error => {

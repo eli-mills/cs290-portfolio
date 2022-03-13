@@ -11,6 +11,26 @@ function CreateExercisePage () {
     const [date, setDate] = useState();
 
     const history = useHistory();
+
+    const addEntry = async e => {
+        e.preventDefault();
+        const newEntry = { name, reps, weight, unit, date };
+        const response = await fetch('/exercises', {
+            method: 'POST',
+            body: JSON.stringify(newEntry),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        console.log(response.status);
+        if (response.status === 201) {
+            alert('New entry added!');
+        } else {
+            alert(`Failed to create entry, status code ${response.status}`);
+        }
+        
+        history.push('/');
+    }
     
     return (
         <>
@@ -41,8 +61,8 @@ function CreateExercisePage () {
                                 />
                             </td>
                             <td>
-                                <select onChange={e=>{setUnit(e.target.value)}}>
-                                    <option value="lbs" selected>lbs</option>
+                                <select value="lbs" onChange={e=>{setUnit(e.target.value)}}>
+                                    <option value="lbs">lbs</option>
                                     <option value="kgs">kgs</option>
                                 </select>
                             </td>
@@ -55,13 +75,7 @@ function CreateExercisePage () {
                         </tr>
                     </tbody>
                 </table>
-                <button 
-                    onClick={ e => {
-                        e.preventDefault();
-                        alert(`Success! The following was created: ${name}, ${reps}, ${weight}, ${unit}, ${date}`);
-                        history.push('/');
-                    }}
-                >
+                <button onClick={ addEntry }>
                     Submit
                 </button>
             </form>
