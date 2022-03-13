@@ -32,13 +32,25 @@ app.get('/exercises', (req, res)=>{
 });
 
 // UPDATE
-app.put('/exercises:_id', ()=>{
-    console.log("PUT request received.")
+app.put('/exercises/:_id', (req, res)=>{
+    const updates = req.body;
+    console.log(updates);
+    updateEntry(req.params._id, updates)
+    .then(entry => { res.status(200).json(entry); })
+    .catch(error => { 
+        console.error(error);
+        res.status(400).json({Error: 'Update request failed.'});
+    });
 });
 
 // DELETE
-app.delete('/exercises:_id', ()=>{
-    console.log("DELETE request received.")
+app.delete('/exercises/:_id', (req, res)=>{
+    deleteEntry(req.params._id)
+    .then(()=>{res.status(204).end()})
+    .catch(error => {
+        console.error(error);
+        res.status(400).json({Error: 'Delete request failed.'});
+    });
 });
 
 

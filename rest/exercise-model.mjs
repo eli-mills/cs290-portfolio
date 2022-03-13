@@ -43,12 +43,12 @@ const retrieveAllEntries = async () => {
 
 // UPDATE
 const updateEntry = async (entryId, updates) => {
-    return User.findOneAndUpdate( {_id: entryId}, updates );
+    return Entry.findOneAndUpdate( {_id: entryId}, updates );
 }
 
 // DELETE
 const deleteEntry = async (entryId) => {
-     return User.deleteOne( {_id: entryId} );
+     return Entry.deleteOne( {_id: entryId} );
 }
 
 // EXPORTS
