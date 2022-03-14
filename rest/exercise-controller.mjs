@@ -39,7 +39,7 @@ app.put('/exercises/:_id', (req, res)=>{
     const updates = req.body;
     console.log(updates);
     updateEntry(req.params._id, updates)
-    .then(entry => { res.status(200).json(entry); })
+    .then(() => { res.status(200).json({_id: req.params._id, ...req.body}); })
     .catch(error => { 
         console.error(error);
         res.status(400).json({Error: 'Update request failed.'});
