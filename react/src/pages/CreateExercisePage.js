@@ -35,50 +35,49 @@ function CreateExercisePage () {
     return (
         <>
             <h1>Create Exercise</h1>
-            <form>
-                <table>
-                    <ExerciseTableHead />
-                    <tbody>
-                        <tr>
-                            <td>
-                                <input 
-                                    type="text" 
-                                    onChange={e=>{setName(e.target.value)}}
-                                />
-                            </td>
-                            <td>
-                                <input 
-                                    type="text"
-                                    inputMode="numeric"
-                                    onChange={e=>{setReps(e.target.value)}}
-                                />
-                            </td>
-                            <td>
-                                <input 
-                                    type="text"
-                                    inputMode="numeric"
-                                    onChange={e=>{setWeight(e.target.value)}}
-                                />
-                            </td>
-                            <td>
-                                <select value="lbs" onChange={e=>{setUnit(e.target.value)}}>
-                                    <option value="lbs">lbs</option>
-                                    <option value="kgs">kgs</option>
-                                </select>
-                            </td>
-                            <td>
-                                <input 
-                                    type="text" 
-                                    onChange={e=>{setDate(e.target.value)}}
-                                />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button onClick={ addEntry }>
-                    Submit
-                </button>
-            </form>
+            <table>
+                <ExerciseTableHead />
+                <tbody>
+                    <tr>
+                        <td>
+                            <input 
+                                type="text" 
+                                onChange={e=>{setName(e.target.value)}}
+                            />
+                        </td>
+                        <td>
+                            <input 
+                                type="text"
+                                inputMode="numeric"
+                                onChange={e=>{setReps(e.target.value)}}
+                            />
+                        </td>
+                        <td>
+                            <input 
+                                type="text"
+                                inputMode="numeric"
+                                onChange={e=>{setWeight(e.target.value)}}
+                            />
+                        </td>
+                        <td>
+                            <select onChange={e=>{setUnit(e.target.value)}}>
+                                <option value="lbs" selected>lbs</option>
+                                <option value="kgs">kgs</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input 
+                                type="text" 
+                                onChange={e=>{setDate(e.target.value)}}
+                            />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onClick={ addEntry }>
+                Submit
+            </button>
+            
         </>
     );
 }

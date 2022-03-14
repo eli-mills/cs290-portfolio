@@ -1,38 +1,238 @@
+@import '../node_modules/normalize.css/normalize.css';
+
+:root{
+  --main-bg-color: rgb(75, 100, 125);
+  --dark-accent: rgb(25, 40, 100);
+  --light-accent: rgb(255, 250, 230);
+  --dead-space: rgb(40, 50, 40);
+  --highlight: rgb(150, 210, 235);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: var(--main-bg-color);
+  color: var(--light-accent);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  padding-bottom: 6rem;
+  position: relative;
+  min-height: 100%;
+}
+
+header {
+  background-color: var(--dead-space);
+  padding: 2rem 0;
+  margin: 0;
+}
+
+header h1 {
+  letter-spacing: 0.15rem;
+  margin-top: 0;
+}
+
+header p {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+
+nav {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--dark-accent);
+  height: 3rem;
+  padding: 1rem 0;
+  line-height: 3rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  border: 1px solid var(--dark-accent);
+  border-radius: 5px;
+  padding: 1rem .5rem;
+  text-decoration: none;
+  background-color: var(--dark-accent);
+  color: var(--light-accent);
+  font-size: 1.2rem;
+}
+
+main {
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  min-width: 80%;
+  margin: 1rem auto;
+  line-height: 2rem;
+}
+
+main h2 {
+  line-height: 3rem;
+}
+
+footer {
+  background-color: var(--dead-space);
+  height: 4rem;
+  width: 100%;
+  line-height: 4rem;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+}
+
+th, td {
+  border: 1px solid var(--dark-accent);
+  border-collapse: collapse;
+}
+
+table {
+  margin: 1rem auto;
+  min-width: 50%;
+  border: none;
+  border-collapse: collapse;
+}
+
+
+td, th {
+  padding: .5rem;
+  height: 2.2rem;
+}
+
+tr th {
+  background-color: var(--dark-accent);
+  font-size: 1.4rem;
+}
+
+tr td {
+  background-color: var(--light-accent);
+  color: var(--dark-accent);
+  font-size: 1.2rem;
+  line-height: 1.2rem;;
+}
+
+.main-table tr:hover td {
+  background-color: var(--highlight);
+}
+
+
+input, button {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+input {
+  color: var(--dark-accent);
+  padding: 0rem;
+}
+
+input:focus{
+  outline: 1px solid var(--dark-accent);
+}
+
+button {
+  background-color: var(--dark-accent);
+  color: var(--light-accent);
+  border: none;
+  border-radius: 5px;
+  margin-left: 1.5rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.create-row {
+  background-color: var(--main-bg-color);
+}
+
+.icon {
+  cursor: pointer;
+  color: var(--dark-accent);
+  font-size: 1.5rem;
+}
+
+.icon-hidden {
+  visibility: hidden;
+}
+
+.icon:visited {
+  color: inherit;
+}
+
+tr:hover .icon-hidden {
+  visibility: visible;
+}
+
+.tbl-icon, .main-table tr:hover .tbl-icon{
+  background-color: var(--main-bg-color);
+  border: none;
+}
+
+.delete {
+  color: rgb(225, 50, 50);
+}
+
+.edit {
+  color: rgb(125, 190, 235);
+}
+
+.add {
+  color: rgb(80, 200, 80);
+  font-size: 1.8rem;
+  width: 100%;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+  color: var(--main-bg-color);
+  font-size: 7rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (min-width: 1200px) {  
+  header h1 {
+    font-size: 3rem;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  header p {
+    font-size: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  nav a {
+    margin: 1rem 2rem;
+    padding: 1rem 2rem;
+    letter-spacing: .1rem;
+  }
+  
+  main {
+    width: 40%;
+    line-height: 2.25rem;
+  }
+
+  main h2 {
+    font-size: 2.5rem;
+  }
+
+  table {
+    width: 70%;
+  }
+
+  table caption {
+    font-size: 2.2rem;
+  }
+
+  table th {
+    font-size: 1.75rem;
+  }
+
+  legend {
+    width: 50%;
+    margin-bottom: 1rem;
+  }
+
+  .logo {
+    position: absolute;
+    left: 2%;
   }
 }

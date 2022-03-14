@@ -6,7 +6,7 @@ function EditIcon ({entry, setEntry}) {
     const editItem = () => { setEntry(entry) }
     return (
         <Link to="/edit-exercise">
-            <BiEdit onClick={editItem} />
+            <BiEdit className="icon icon-hidden edit" onClick={editItem} />
         </Link>
     );
 }

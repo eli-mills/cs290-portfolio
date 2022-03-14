@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <Router>
         <header>
-          <h1>Common Header</h1>
+          <h1>Log Your Lift</h1>
         </header>
 
         <Navigation />

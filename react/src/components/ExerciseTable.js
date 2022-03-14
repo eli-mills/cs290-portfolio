@@ -16,7 +16,7 @@ function ExerciseTable ({setEntry}) {
     useEffect( () => {retrieveEntries()}, [] );
 
     return (
-        <table>
+        <table className="main-table">
             <ExerciseTableHead />
             <tbody>
                 {entries.map( (entry, index) => <ExerciseRow entry={entry} key = {index} setEntry={setEntry} setEntriesToDisplay={setEntriesToDisplay}/> ) }

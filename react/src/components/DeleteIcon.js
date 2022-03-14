@@ -15,7 +15,7 @@ function DeleteIcon ({id, setEntriesToDisplay}) {
     };
 
     return (
-        <TiDeleteOutline onClick={deleteRow} />
+        <TiDeleteOutline className="icon icon-hidden delete" onClick={deleteRow} />
     );
 }
 
