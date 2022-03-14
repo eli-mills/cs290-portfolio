@@ -5,7 +5,7 @@
   --dark-accent: rgb(25, 40, 100);
   --light-accent: rgb(255, 250, 230);
   --dead-space: rgb(40, 50, 40);
-  --highlight: rgb(150, 210, 235);
+  --highlight: rgb(242, 187, 67);
 }
 
 html {
@@ -33,6 +33,7 @@ header {
 header h1 {
   letter-spacing: 0.15rem;
   margin-top: 0;
+  text-decoration: underline;
 }
 
 header p {
@@ -140,6 +141,19 @@ button {
   cursor: pointer;
 }
 
+button:hover, nav a:hover {
+  background-color: var(--highlight);
+  color: var(--dark-accent);
+}
+
+a, button, td {
+  transition: background .1s ease-in;
+}
+
+.main-table {
+  margin-left: 20%;
+}
+
 .create-row {
   background-color: var(--main-bg-color);
 }
@@ -148,6 +162,7 @@ button {
   cursor: pointer;
   color: var(--dark-accent);
   font-size: 1.5rem;
+  padding: 0;
 }
 
 .icon-hidden {
@@ -160,6 +175,11 @@ button {
 
 tr:hover .icon-hidden {
   visibility: visible;
+}
+
+.tbl-icon {
+  min-width: 1.5rem;
+  padding: .15rem;
 }
 
 .tbl-icon, .main-table tr:hover .tbl-icon{

@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <Router>
         <header>
-          <h1>Log Your Lift</h1>
+          <h1>Log Your Lifts</h1>
         </header>
 
         <Navigation />
@@ -34,7 +34,7 @@ function App() {
         </main>
 
         <footer>
-          <p>&copy; 2022 Eli Mills</p>
+          &copy; 2022 Eli Mills
         </footer>
       </Router>
     </div>

@@ -75,7 +75,7 @@ function CreateExercisePage () {
                 </tbody>
             </table>
             <button onClick={ addEntry }>
-                Submit
+                Save Entry
             </button>
             
         </>

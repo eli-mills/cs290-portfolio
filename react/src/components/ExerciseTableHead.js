@@ -9,6 +9,8 @@ function ExerciseTableHead () {
                 <th>Weight</th>
                 <th>Unit</th>
                 <th>Date</th>
+                <th className="tbl-icon"></th>
+                <th className="tbl-icon"></th>
             </tr>
         </thead>
     );

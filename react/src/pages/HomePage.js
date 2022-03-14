@@ -5,7 +5,7 @@ import ExerciseTable from '../components/ExerciseTable';
 function HomePage ({setEntry}) {
     return (
         <>
-            <h2>Home Page</h2>
+            <h2>Exercise Log</h2>
             <ExerciseTable setEntry={setEntry}/>
         </>
     );

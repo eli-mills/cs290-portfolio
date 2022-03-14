@@ -77,7 +77,7 @@ function EditExercisePage ({entry}) {
                     </tbody>
                 </table>
                 <button onClick={ editEntry }>
-                    Submit
+                    Save Changes
                 </button>
             </form>
         </>

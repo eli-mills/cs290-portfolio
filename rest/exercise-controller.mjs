@@ -18,7 +18,7 @@ app.post('/exercises', ( req, res ) => {
     .then( newEntry => { res.status(201).json(newEntry); } )
     .catch( error => { 
         console.error(error);
-        res.status(400).json({Error: 'Create request failed.'}); 
+        res.status(500).json({Error: 'Create request failed.'}); 
     });
 });
 
@@ -29,7 +29,7 @@ app.get('/exercises', (req, res)=>{
     .then( entryArray => { res.status(200).json(entryArray) } )
     .catch( error => { 
         console.error(error);
-        res.status(400).json({Error: 'Retrieve request failed.'}); 
+        res.status(500).json({Error: 'Retrieve request failed.'}); 
     });
 });
 
